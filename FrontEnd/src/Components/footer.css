@@ -7,13 +7,14 @@
   left: 0;
   right: 0;
   z-index: 999;
+  
 }
 
 .footerContent {
   display: flex;
-  flex-direction:row;
+  flex-direction: row;
   align-items: center;
-  justify-content:space-evenly;
+  justify-content: space-evenly;
   padding: 5px;
 }
 
@@ -50,4 +51,18 @@
   margin: 0 5px;
   color: white;
   font-size: 20px;
+}
+
+@media (max-width: 480px) {
+  .footerContent {
+    flex-direction: column;
+  }
+  
+  .companySection {
+    text-align: center;
+  }
+  
+  .linksSection {
+    margin-top: 10px;
+  }
 }

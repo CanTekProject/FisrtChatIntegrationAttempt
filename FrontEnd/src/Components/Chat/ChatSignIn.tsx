@@ -185,12 +185,12 @@ export default function SignIn({
     >
       <ChatContainer>
         <InputLogin
-          label="UserName"
+          label="User"
           type="text"
           name="userName"
           value={userName}
           onChange={(e: any) => setUserName(e.target.value)}
-          placeholder="username"
+          placeholder="enter your username"
         />
       </ChatContainer>
       <ChatContainer>
@@ -200,7 +200,7 @@ export default function SignIn({
           name="password"
           value={password}
           onChange={(e: any) => setPassword(e.target.value)}
-          placeholder="••••••••"
+          placeholder="enter your password"
         />
       </ChatContainer>
       <button type="submit" className="login-button">

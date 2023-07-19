@@ -189,12 +189,12 @@ export default function SignUp({
     >
       <ChatContainer>
         <InputLogin
-          label="Username"
+          label="User"
           type="text"
           name="userName"
           value={userName}
           onChange={(e: any) => setUserName(e.target.value)}
-          placeholder="username"
+          placeholder=" enter a username"
         />
       </ChatContainer>
       <ChatContainer>
@@ -204,7 +204,7 @@ export default function SignUp({
           name="email"
           value={email}
           onChange={(e: any) => setEmail(e.target.value)}
-          placeholder="name@company.com"
+          placeholder=" enter your email here"
         />
       </ChatContainer>
       <ChatContainer>
@@ -214,7 +214,7 @@ export default function SignUp({
           name="password"
           value={password}
           onChange={(e: any) => setPassword(e.target.value)}
-          placeholder="••••••••"
+          placeholder="enter a password"
         />
       </ChatContainer>
       <button type="submit" className="signup-button">

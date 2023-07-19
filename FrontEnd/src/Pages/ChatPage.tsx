@@ -12,6 +12,15 @@ function ChatPage() {
     <div style={{ color: "white" }} className="main">
       <body>
         <h1>Supercharge Your Problem-Solving Potential</h1>
+        <div className="animation-container">
+          <img
+            src="../../public/rocket.png"
+            alt="Rocket"
+            className="animated-element"
+            height={"150px"}
+            width={"150px"}
+          />
+        </div>
         <p>
           With our chat service, we bring you the ultimate fusion of
           StackOverflow and real-time chat. Say goodbye to endless waiting and
@@ -45,16 +54,6 @@ function ChatPage() {
             src="../../public/chat.gif"
             alt="Chat Gif"
             className="chat-gif"
-          />
-        </div>
-
-        <div className="animation-container">
-          <img
-            src="../../public/rocket.png"
-            alt="Rocket"
-            className="animated-element"
-            height={"150px"}
-            width={"150px"}
           />
         </div>
 
