@@ -10,6 +10,8 @@ const session = require('express-session');
 const http = require('http');
 const socketIO = require('socket.io');
 const User = require('./model/user.model');
+const accountController = require('./controllers/accountController');
+
 
 // Create Express app
 const app = express();
@@ -26,15 +28,15 @@ app.use(express.json());
 
 // Connect to MongoDB
 mongoose
-  .connect("mongodb+srv://CanTek:CanTek123@cantekcluster.uujud7m.mongodb.net/?retryWrites=true&w=majority", {
+  .connect(process.env.MONGODB_URL || 'mongodb+srv://CanTek:CanTek123@cantekcluster.uujud7m.mongodb.net/?retryWrites=true&w=majority', {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
   .then(() => {
-    console.log("Connected to MongoDB");
+    console.log('Connected to MongoDB');
   })
   .catch((error) => {
-    console.error("Error connecting to MongoDB:", error);
+    console.error('Error connecting to MongoDB:', error);
   });
 
 // Set up session middleware
@@ -163,6 +165,10 @@ const io = socketIO(server, {
     methods: ['GET', 'POST'],
   },
 });
+
+app.get('/profile', passport.authenticate('jwt', { session: false }), accountController.profile);
+app.post('/login', passport.authenticate('local', { session: false }), accountController.login);
+app.post('/register', accountController.register);
 
 let users = [];
 
