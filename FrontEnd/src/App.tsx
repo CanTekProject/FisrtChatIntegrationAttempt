@@ -16,9 +16,9 @@ import ChatPage from "./Pages/ChatPage";
 import Login from "./Components/Chat/ChatLogin";
 import Chat from "./Components/Chat/Chat";
 
-const socket = io("ws://localhost:4000");
-
 function App() {
+  const socket = io("ws://localhost:8000");
+
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const handleLogin = () => {
